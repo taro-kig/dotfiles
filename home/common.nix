@@ -15,6 +15,7 @@
     fd
     jq
     ripgrep
+    tmux
     tree
   ];
 
@@ -68,6 +69,8 @@
   xdg.configFile."nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
   xdg.configFile."nvim/init.lua".enable = lib.mkForce false;
+
+  xdg.configFile."tmux/tmux.conf".source = ../tmux/tmux.conf;
 
   programs.bat.enable = true;
   programs.eza.enable = true;
