@@ -72,6 +72,15 @@
 
   xdg.configFile."tmux/tmux.conf".source = ../tmux/tmux.conf;
 
+  # Linked out of the store because Claude Code writes settings.json itself
+  # (plugin installs, /config).
+  home.file.".claude/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/claude/settings.json";
+  home.file.".claude/CLAUDE.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/claude/CLAUDE.md";
+  home.file.".claude/skills".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/claude/skills";
+
   programs.bat.enable = true;
   programs.eza.enable = true;
   programs.fzf.enable = true;
