@@ -5,12 +5,14 @@ Windows 本体は Nix の対象外なので、`winget` と PowerShell で管理�
 
 | 環境 | 設定の場所 |
 |---|---|
-| 共通 | `home/common.nix`, `nvim/` |
+| 共通 | `home/common.nix`, `nvim/`, `claude/` |
 | macOS | `home/darwin.nix`, `darwin/default.nix` |
 | WSL | `home/wsl.nix` |
 | Windows 本体 | `windows/` |
 
 このリポジトリは `~/dotfiles` に clone してください。Neovim の設定は `~/dotfiles/nvim` へのリンクで読み込みます。
+
+Claude Code の `settings.json`、`CLAUDE.md`、`skills/` も `~/.claude` から `~/dotfiles/claude` へのリンクで読み込みます。Windows 本体では `setup.ps1` が `~/.claude` にコピーするので、変更したら再実行してください。
 
 ユーザー名は実行時の環境変数から読み取るので、適用時は `--impure` が必要です。
 
